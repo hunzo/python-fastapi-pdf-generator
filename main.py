@@ -30,7 +30,13 @@ def main_fpdf():
     bio = io.BytesIO(buffer) 
 
     response = StreamingResponse(bio, media_type="application/pdf")
-    response.headers["Content-Disposition"] = "attachment; filename=files_pdf.pdf"
+    response.headers["Content-Disposition"] = "inline; filename=files_pdf.pdf"
 
     return response
 
+
+#  // download
+#  Content-Disposition: attachment; filename=sample.pdf;
+    
+#  // open
+#  Content-Disposition: inline; filename="sample.pdf"
