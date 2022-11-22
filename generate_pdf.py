@@ -53,20 +53,20 @@ def PDFgenerator(FormCleanData: dict):
     buffer.seek(0)
     # write to buffer
 
-    # out = PdfFileWriter()
+    out = PdfFileWriter()
 
-    # file = PdfFileReader(buffer)
-    # num = file.numPages
+    file = PdfFileReader(buffer)
+    num = file.numPages
 
-    # for idx in range(num):
-    #     page = file.getPage(idx)
-    #     out.addPage(page)
+    for idx in range(num):
+        page = file.getPage(idx)
+        out.addPage(page)
 
-    # password = "123456"
-    # out.encrypt(password)
-    # out.write(buffer)
+    password = "123456"
+    out.encrypt(password)
+    out.write(buffer)
 
-    # buffer.seek(0)
+    buffer.seek(0)
     # write to buffer #encrypt file
 
     # return bytes
